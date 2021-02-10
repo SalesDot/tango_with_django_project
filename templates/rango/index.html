@@ -3,7 +3,11 @@
 
 
 {% block title_block %}
-            hey there partner! <br />
+            {% if user.is_authenticated %}
+				howdy {{ user.username }}!
+			{% else %}
+				hey there partner!
+			{% endif %}
             <strong>{{ boldmessage }}</strong><br />
         </div>
  {% endblock %}
@@ -26,6 +30,7 @@
 			{% for page in pages %}
 				<li><a href="{{ page.url}}">{{ page.title }} - {{ page.category}} </a></li>
 			{% endfor %}
+			
 		</ul>
 		{% else %}
 		<strong>No pages</strong>
