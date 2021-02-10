@@ -4,7 +4,7 @@
 
 {% block title_block %}
             {% if user.is_authenticated %}
-				howdy {{ user.username }}!
+				<strong>howdy {{ user.username }}! </strong>
 			{% else %}
 				hey there partner!
 			{% endif %}
